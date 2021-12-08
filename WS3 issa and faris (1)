@@ -1,0 +1,56 @@
+/*
+ Name:FarisAtellawi
+ID:119202001
+STUDENT INFO 2
+Name:Issa Basyouni
+ID:118202002
+*/
+import java.util.Scanner;
+public class Main
+{
+    public static int chooseCoffe(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Choose your coffe , latte cost 15 , black cost 10");
+        int price = 0;
+        while(price == 0){
+           String coffe = scanner.nextLine();
+           if(coffe.equals("black")){
+               price = 10;
+           }
+           else if(coffe.equals("latte")){
+               price = 15;
+           }else {
+               System.out.println("Invalid Option!");
+               System.out.println("Please Choose your coffe again");
+           }
+        }
+        return price;
+    }
+    public static int chooseSize(int coffePrice){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Choose coffe size , small "+coffePrice+" , big cost "+(coffePrice+5));
+        int price = 0;
+        while(price == 0){
+           String coffe = scanner.nextLine();
+           if(coffe.equals("small")){
+               price = coffePrice;
+           }
+           else if(coffe.equals("big")){
+               price = coffePrice+5;
+           }else {
+               System.out.println("Invalid Option!");
+               System.out.println("Please Choose size again");
+           }
+        }
+        return price;
+    }
+    public static void totalPay(int price){
+        System.out.println("You need to pay " + price);
+         System.out.println("Thank's you :)");
+    }
+	public static void main(String[] args) {
+		int price = chooseCoffe();
+		price = chooseSize(price);
+		totalPay(price);
+	}
+}
